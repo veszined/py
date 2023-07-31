@@ -1,0 +1,13 @@
+def flattenList(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flattenList(item))
+        else:
+            result.append(item)
+    return result
+
+inList = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+outList = flattenList(inList)
+
+print(outList)
