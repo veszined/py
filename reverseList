@@ -1,0 +1,13 @@
+
+def reverse(lst):
+    new_lst = []
+    for item in lst[::-1]:
+        if isinstance(item, list):
+            new_lst.append(reverse(item))
+        else:
+            new_lst.append(item)
+    return new_lst
+    
+lst = [10, 11, [6, 8, 10], 12, 13, 14, 15]
+reversed_list = reverse(lst)
+print(reversed_list)
